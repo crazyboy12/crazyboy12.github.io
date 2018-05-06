@@ -92,11 +92,15 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">weget https://repo.anaconda.com/archive/Anaconda3-5.1.0-Linux-x86_64.sh</span><br><span class="line"><span class="comment">#!具体版本以官网为准</span></span><br></pre></td></tr></table></figure>
 <p>安装anaconda</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sh Anaconda3-5.1.0-Linux-x86_64.sh</span><br></pre></td></tr></table></figure>
-<h2 id="下载opencv"><a href="#下载opencv" class="headerlink" title="下载opencv"></a>下载opencv</h2>
+<h2 id="下载opencv"><a href="#下载opencv" class="headerlink" title="下载opencv"></a>下载opencv</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">weget https://github.com/opencv/opencv/archive/3.4.1.zip</span><br></pre></td></tr></table></figure>
+<h2 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h2><p>把下载好的压缩包解压opencv的程序里执行cmake</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sudo cmake \</span><br><span class="line">-D CMAKE_BUILD_TYPE=Release \</span><br><span class="line">-D CMAKE_INSTALL_PREFIX=/usr/<span class="built_in">local</span> \</span><br><span class="line">-D WITH_IPP=OFF \</span><br><span class="line">-D PYTHON_DEFAULT_EXECUTABLE=/xxx/xxx/anaconda3/bin/python3 \</span><br><span class="line">-D BUILD_opencv_python3=ON \</span><br><span class="line">-D BUILD_opencv_python2=OFF \</span><br><span class="line">-D PYTHON3_EXECUTABLE=/xxx/xxx/anaconda3/bin/python3 \</span><br><span class="line">-D PYTHON3_INCLUDE_DIR=/xxx/xxx/anaconda3/include/python3.6m \</span><br><span class="line">-D PYTHON3_LIBRARY=/xxx/xxx/anaconda3/lib/libpython3.6m.so.1.0 \</span><br><span class="line">-D PYTHON_NUMPY_PATH=/xxx/xxx/anaconda3/lib/python3.6/site-packages/numpy/core/include ..</span><br></pre></td></tr></table></figure>
+<p>cmake执行结束后编译安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/01/linux-anaconda编译安装opencv3/" data-id="cjgnr20gf000178td2gnid564" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/01/linux-anaconda编译安装opencv3/" data-id="cjgui908m0001k4td4yu7vdcc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编译安装/">编译安装</a></li></ul>
@@ -148,7 +152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/01/linux编译安装python/" data-id="cjgnr20gh000278tdrend6s5l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/01/linux编译安装python/" data-id="cjgui908q0002k4tdro7cmws1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编译安装/">编译安装</a></li></ul>
@@ -187,6 +191,7 @@
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="clean"><a href="#clean" class="headerlink" title="clean"></a>clean</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
@@ -195,7 +200,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/30/hello-world/" data-id="cjgnr20fy000078tdken8ef4q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/30/hello-world/" data-id="cjgui908g0000k4tdaw8i6cnk" class="article-share-link">Share</a>
       
       
     </footer>
